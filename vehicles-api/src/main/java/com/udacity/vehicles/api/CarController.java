@@ -80,8 +80,7 @@ class CarController {
          * Use the `assembler` on that saved car and return as part of the response.
          *   Update the first line as part of the above implementing.
          */
-        System.out.println(car);
-        carService.save(car);
+        car = carService.save(car);
         Resource<Car> resource = assembler.toResource(car);
         return ResponseEntity.created(new URI(resource.getId().expand().getHref())).body(resource);
     }
@@ -101,7 +100,7 @@ class CarController {
          *   Update the first line as part of the above implementing.
          */
         car.setId(id);
-        carService.save(car);
+        car = carService.save(car);
         Resource<Car> resource = assembler.toResource(car);
         return ResponseEntity.ok(resource);
     }

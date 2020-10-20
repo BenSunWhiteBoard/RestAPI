@@ -116,7 +116,7 @@ public class CarService {
                         return repository.save(carToBeUpdated);
                     }).orElseThrow(CarNotFoundException::new);
         }
-        System.out.println(car);
+        //System.out.println(car);
         return repository.save(car);
     }
 
